@@ -1,2 +1,2 @@
-Music used:
+# Music used
 Dreams from Bensound.com
