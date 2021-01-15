@@ -21,9 +21,9 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   ///
 
   /// Compulsory
-  AudioPlayer audioPlayer;
-  AudioPlayerState audioPlayerState;
-  String url;
+  AudioPlayer audioPlayer = AudioPlayer();
+  AudioPlayerState audioPlayerState = AudioPlayerState.PAUSED;
+  String url= "https://www.uclahealth.org/marc/mpeg/01_Breathing_Meditation.mp3";
 
   /// Optional
   int timeProgress = 0;
@@ -47,8 +47,6 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
     super.initState();
 
     /// Compulsory
-    audioPlayer = AudioPlayer();
-    url = "https://www.uclahealth.org/marc/mpeg/01_Breathing_Meditation.mp3";
     audioPlayer.onPlayerStateChanged.listen((AudioPlayerState s) {
       setState(() {
         audioPlayerState = s;
@@ -78,6 +76,13 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   /// Compulsory
   pauseMusic() async {
     await audioPlayer.pause();
+  }
+
+
+  /// Compulsory
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
   }
 
   /// Optional
@@ -110,7 +115,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
                     audioPlayerState == AudioPlayerState.PLAYING
                         ? audioPlayer.pause()
                         : playMusic();
-                    setState(() {});
+                    //setState(() {});
                   },
                   icon: Icon(audioPlayerState == AudioPlayerState.PLAYING
                       ? Icons.pause_rounded
@@ -130,11 +135,5 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
             ],
           )),
     );
-  }
-
-  /// Compulsory
-  void dispose() {
-    audioPlayer.dispose();
-    super.dispose();
   }
 }
