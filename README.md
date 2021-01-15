@@ -1,4 +1,6 @@
-# Willkommen zu meinen Flutter Tutorials
+# Welcome to my flutter tutorials!
 
-### :page_with_curl: Themen
-* [Audio Player](https://github.com/FlorianPruemer/flutter_tutorials/tree/master/audio_player) &rarr; In diesem Tutorial lernst du, wie man Musik in seiner Flutter App kontrolliert abspielen kann
+### :page_with_curl: Topics
+* [Audio Player](https://github.com/FlorianPruemer/flutter_tutorials/tree/master/audio_players) &rarr; In this tutorial, you learn how to play an audio file in your Flutter app.  
+  
+:arrow_right: Watch my [Youtube tutorial]() for a detailed insight into the integration of an audio player

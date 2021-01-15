@@ -1,16 +1,9 @@
-# audio_players
+# Audio Player
 
-A new Flutter application.
+This tutorial teaches you the basics of how to implement a functioning audio player in your Flutter app. It covers the integration of an audio file via url (Internet or local) or local asset. For each variant, it is also explained how to add further functionality such as tracking the time progress, the overall duration and jumping within the audio.
 
-## Getting Started
+Check out my :tv: [Youtube tutorial]() where I explain everything in detail and show you how to implement the audio player step by step.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Further reading
+- [audioplayers](https://pub.dev/packages/audioplayers) Flutter package
+- A well-written [article](https://karthikponnam.medium.com/flutter-media-playback-audio-video-43d3ba955bb7) by Karthik Ponnam about how to implement video and audio players in Flutter.
