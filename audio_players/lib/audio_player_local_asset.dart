@@ -13,20 +13,20 @@ class _AudioPlayerLocalAssetState extends State<AudioPlayerLocalAsset> {
   /// to maintain clarity as to what is really needed for a functioning audio player
   /// and what is added for further interaction.
   ///
-  /// "Compulsory": A functioning audio player with:
+  /// 'Compulsory': A functioning audio player with:
   ///             - Play/Pause button
   ///
-  /// "Optional": A functioning audio player with:
+  /// 'Optional': A functioning audio player with:
   ///             - Play/Pause button
   ///             - time stamps for progress and duration
   ///             - slider to jump within the audio file
   ///
 
   /// Compulsory
-  AudioPlayer audioPlayer;
-  AudioPlayerState audioPlayerState;
+  AudioPlayer audioPlayer = AudioPlayer();
+  AudioPlayerState audioPlayerState = AudioPlayerState.PAUSED;
   AudioCache audioCache;
-  String filePath;
+  String filePath = 'music.mp3';
 
   /// Optional
   int timeProgress = 0;
@@ -52,8 +52,6 @@ class _AudioPlayerLocalAssetState extends State<AudioPlayerLocalAsset> {
     /// Compulsory
     audioPlayer = AudioPlayer();
     audioCache = AudioCache(fixedPlayer: audioPlayer);
-    filePath = "music.mp3";
-
 
     audioPlayer.onPlayerStateChanged.listen((AudioPlayerState s) {
       setState(() {
@@ -70,6 +68,15 @@ class _AudioPlayerLocalAssetState extends State<AudioPlayerLocalAsset> {
   }
 
   /// Compulsory
+  @override
+  void dispose() {
+    audioPlayer.release();
+    audioPlayer.dispose();
+    audioCache.clearCache();
+    super.dispose();
+  }
+
+  /// Compulsory
   playMusic() async {
     await audioCache.play(filePath);
   }
@@ -78,6 +85,8 @@ class _AudioPlayerLocalAssetState extends State<AudioPlayerLocalAsset> {
   pauseMusic() async {
     await audioPlayer.pause();
   }
+
+
 
   /// Optional
   Future<int> _getAudioDuration() async {
@@ -167,13 +176,5 @@ class _AudioPlayerLocalAssetState extends State<AudioPlayerLocalAsset> {
             ],
           )),
     );
-  }
-
-  /// Compulsory
-  void dispose() {
-    audioPlayer.release();
-    audioPlayer.dispose();
-    audioCache.clearCache();
-    super.dispose();
   }
 }

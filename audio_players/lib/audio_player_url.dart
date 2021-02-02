@@ -11,10 +11,10 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   /// to maintain clarity as to what is really needed for a functioning audio player
   /// and what is added for further interaction.
   ///
-  /// "Compulsory": A functioning audio player with:
+  /// 'Compulsory': A functioning audio player with:
   ///             - Play/Pause button
   ///
-  /// "Optional": A functioning audio player with:
+  /// 'Optional': A functioning audio player with:
   ///             - Play/Pause button
   ///             - time stamps for progress and duration
   ///             - slider to jump within the audio file
@@ -23,7 +23,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   /// Compulsory
   AudioPlayer audioPlayer = AudioPlayer();
   AudioPlayerState audioPlayerState = AudioPlayerState.PAUSED;
-  String url= "https://www.uclahealth.org/marc/mpeg/01_Breathing_Meditation.mp3";
+  String url= 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3';
 
   /// Optional
   int timeProgress = 0;
@@ -68,6 +68,14 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   }
 
   /// Compulsory
+  @override
+  void dispose() {
+    audioPlayer.release();
+    audioPlayer.dispose();
+    super.dispose();
+  }
+
+  /// Compulsory
   playMusic() async {
     // Add the parameter "isLocal: true" if you want to access a local file
     await audioPlayer.play(url);
@@ -79,11 +87,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   }
 
 
-  /// Compulsory
-  void dispose() {
-    audioPlayer.dispose();
-    super.dispose();
-  }
+
 
   /// Optional
   void seekToSec(int sec) {
