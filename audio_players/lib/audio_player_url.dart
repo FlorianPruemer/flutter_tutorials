@@ -54,7 +54,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
     });
 
     /// Optional
-    audioPlayer.setUrl(url);
+    audioPlayer.setUrl(url); // Triggers the onDurationChanged listener and sets the max duration string
     audioPlayer.onDurationChanged.listen((Duration d) {
       setState(() {
         audioDuration = d.inMilliseconds;
@@ -86,13 +86,10 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
     await audioPlayer.pause();
   }
 
-
-
-
   /// Optional
   void seekToSec(int sec) {
     Duration newPos = Duration(seconds: sec);
-    audioPlayer.seek(newPos);
+    audioPlayer.seek(newPos); // Jumps to the given position within the audio file
   }
 
   /// Optional
@@ -101,7 +98,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
         '${(milliseconds / 60000).floor() < 10 ? 0 : ''}${(milliseconds / 60000).floor()}';
     String seconds =
         '${(milliseconds / 1000).floor() % 60 < 10 ? 0 : ''}${(milliseconds / 1000).floor() % 60}';
-    return '$minutes:$seconds';
+    return '$minutes:$seconds'; // Returns a string with the format mm:ss
   }
 
   @override
