@@ -23,7 +23,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   /// Compulsory
   AudioPlayer audioPlayer = AudioPlayer();
   AudioPlayerState audioPlayerState = AudioPlayerState.PAUSED;
-  String url= 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3';
+  String url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3';
 
   /// Optional
   int timeProgress = 0;
@@ -34,8 +34,8 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
     return Container(
       width: 300.0,
       child: Slider.adaptive(
-          value: (timeProgress / 1000).floorToDouble(),
-          max: (audioDuration / 1000).floorToDouble(),
+          value: timeProgress.toDouble(),
+          max: audioDuration.toDouble(),
           onChanged: (value) {
             seekToSec(value.toInt());
           }),
@@ -47,22 +47,23 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
     super.initState();
 
     /// Compulsory
-    audioPlayer.onPlayerStateChanged.listen((AudioPlayerState s) {
+    audioPlayer.onPlayerStateChanged.listen((AudioPlayerState state) {
       setState(() {
-        audioPlayerState = s;
+        audioPlayerState = state;
       });
     });
 
     /// Optional
-    audioPlayer.setUrl(url); // Triggers the onDurationChanged listener and sets the max duration string
-    audioPlayer.onDurationChanged.listen((Duration d) {
+    audioPlayer.setUrl(
+        url); // Triggers the onDurationChanged listener and sets the max duration string
+    audioPlayer.onDurationChanged.listen((Duration duration) {
       setState(() {
-        audioDuration = d.inMilliseconds;
+        audioDuration = duration.inSeconds;
       });
     });
-    audioPlayer.onAudioPositionChanged.listen((Duration p) async {
+    audioPlayer.onAudioPositionChanged.listen((Duration position) async {
       setState(() {
-        timeProgress = p.inMilliseconds;
+        timeProgress = position.inSeconds;
       });
     });
   }
@@ -89,16 +90,16 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
   /// Optional
   void seekToSec(int sec) {
     Duration newPos = Duration(seconds: sec);
-    audioPlayer.seek(newPos); // Jumps to the given position within the audio file
+    audioPlayer
+        .seek(newPos); // Jumps to the given position within the audio file
   }
 
   /// Optional
-  String getTimeString(int milliseconds) {
-    String minutes =
-        '${(milliseconds / 60000).floor() < 10 ? 0 : ''}${(milliseconds / 60000).floor()}';
-    String seconds =
-        '${(milliseconds / 1000).floor() % 60 < 10 ? 0 : ''}${(milliseconds / 1000).floor() % 60}';
-    return '$minutes:$seconds'; // Returns a string with the format mm:ss
+  String getTimeString(int seconds) {
+    String minuteString =
+        '${(seconds / 60).floor() < 10 ? 0 : ''}${(seconds / 60).floor()}';
+    String secondString = '${seconds % 60 < 10 ? 0 : ''}${seconds % 60}';
+    return '$minuteString:$secondString'; // Returns a string with the format mm:ss
   }
 
   @override
@@ -116,7 +117,6 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
                     audioPlayerState == AudioPlayerState.PLAYING
                         ? audioPlayer.pause()
                         : playMusic();
-                    //setState(() {});
                   },
                   icon: Icon(audioPlayerState == AudioPlayerState.PLAYING
                       ? Icons.pause_rounded
