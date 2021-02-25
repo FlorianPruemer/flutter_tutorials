@@ -152,7 +152,7 @@ class _AudioPlayerLocalAssetState extends State<AudioPlayerLocalAsset> {
                   iconSize: 50,
                   onPressed: () {
                     audioPlayerState == AudioPlayerState.PLAYING
-                        ? audioPlayer.pause()
+                        ? pauseMusic()
                         : playMusic();
                     setState(() {});
                   },

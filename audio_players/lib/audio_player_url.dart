@@ -115,7 +115,7 @@ class _AudioPlayerUrlState extends State<AudioPlayerUrl> {
                   iconSize: 50,
                   onPressed: () {
                     audioPlayerState == AudioPlayerState.PLAYING
-                        ? audioPlayer.pause()
+                        ? pauseMusic()
                         : playMusic();
                   },
                   icon: Icon(audioPlayerState == AudioPlayerState.PLAYING
