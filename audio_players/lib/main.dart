@@ -1,3 +1,4 @@
+import 'package:audio_players/audio_player_background_playlist.dart';
 import 'package:audio_players/audio_player_local_asset.dart';
 import 'package:audio_players/audio_player_url.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       /// Swap classes here:
       ///       - "AudioPlayerUrl()" plays audio file from a url source (can be local or on the Internet)
       ///       - "AudioPlayerLocalAsset()" plays audio file from local asset (stored in /assets)
-      home: AudioPlayerUrl(),
+      ///       - "AudioPlayerBackgroundPlaylist()" plays multiple songs from URL + allows background playing with sound control in notification bar
+      home: AudioPlayerBackgroundPlaylist(),
     );
   }
 }
