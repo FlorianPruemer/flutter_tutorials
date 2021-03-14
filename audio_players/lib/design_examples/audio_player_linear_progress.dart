@@ -76,25 +76,25 @@ class _AudioPlayerLinearProgressState extends State<AudioPlayerLinearProgress> {
           children: [
             IconButton(
                 icon: Icon(Icons.skip_previous_rounded),
-                onPressed: () {
-                  audioPlayer.previous();
-                },
+                onPressed: () =>
+                    audioPlayer.previous()
+                ,
                 iconSize: 60,
                 color: Colors.white),
             IconButton(
                 icon: Icon(realtimePlayingInfos.isPlaying
                     ? Icons.pause_circle_filled_rounded
                     : Icons.play_circle_fill_rounded),
-                onPressed: () {
-                  audioPlayer.playOrPause();
-                },
+                onPressed: () =>
+                    audioPlayer.playOrPause()
+                ,
                 iconSize: 60,
                 color: Colors.white),
             IconButton(
                 icon: Icon(Icons.skip_next_rounded),
-                onPressed: () {
-                  audioPlayer.next();
-                },
+                onPressed: () =>
+                    audioPlayer.next()
+                ,
                 iconSize: 60,
                 color: Colors.white),
           ],
@@ -132,12 +132,12 @@ class _AudioPlayerLinearProgressState extends State<AudioPlayerLinearProgress> {
             padding: const EdgeInsets.only(bottom: 50, left: 20, right: 20),
             child: audioPlayer.builderRealtimePlayingInfos(
                 builder: (context, realtimePlayingInfos) {
-              if (realtimePlayingInfos != null) {
-                return audioPlayerUI(realtimePlayingInfos);
-              } else {
-                return Column();
-              }
-            }),
+                  if (realtimePlayingInfos != null) {
+                    return audioPlayerUI(realtimePlayingInfos);
+                  } else {
+                    return Column();
+                  }
+                }),
           )),
     );
   }

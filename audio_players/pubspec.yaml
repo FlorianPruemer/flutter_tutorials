@@ -32,6 +32,7 @@ dependencies:
   assets_audio_player: ^2.0.14  # needed for audio_player_background_playlist.dart
   percent_indicator: ^2.1.9+1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -48,6 +49,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts:
+    - family: DMSerif
+      fonts:
+        - asset: fonts/DMSerifDisplay-Regular.ttf
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -3,18 +3,25 @@ import 'package:audio_players/audio_player_local_asset.dart';
 import 'package:audio_players/audio_player_url.dart';
 import 'package:audio_players/design_examples/audio_player_circular_progress.dart';
 import 'package:audio_players/design_examples/audio_player_linear_progress.dart';
+import 'package:audio_players/design_examples/audio_player_bottom_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -36,6 +43,6 @@ class MyApp extends StatelessWidget {
         ///       - AudioPlayerCircularProgress():
         ///           -> example design of an audio player with circular progress bar
 
-        home: AudioPlayerLinearProgress());
+        home: AudioPlayerBottomSlider());
   }
 }
