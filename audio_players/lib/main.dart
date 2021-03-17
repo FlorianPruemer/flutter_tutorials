@@ -4,6 +4,8 @@ import 'package:audio_players/audio_player_url.dart';
 import 'package:audio_players/design_examples/audio_player_circular_progress.dart';
 import 'package:audio_players/design_examples/audio_player_linear_progress.dart';
 import 'package:audio_players/design_examples/audio_player_bottom_slider.dart';
+import 'package:audio_players/design_examples/audio_player_swiper.dart';
+import 'package:audio_players/design_examples/audio_player_yellow_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -43,6 +45,6 @@ class MyApp extends StatelessWidget {
         ///       - AudioPlayerCircularProgress():
         ///           -> example design of an audio player with circular progress bar
 
-        home: AudioPlayerBottomSlider());
+        home: AudioPlayerSwiper());
   }
 }

@@ -21,11 +21,20 @@ class _AudioPlayerLinearProgressState extends State<AudioPlayerLinearProgress> {
     audioPlayer.open(
         Playlist(audios: [
           Audio('assets/allthat.mp3',
-              metas: Metas(title: 'All That', artist: 'Benjamin Tissot')),
+              metas: Metas(
+                  title: 'All That',
+                  artist: 'Benjamin Tissot',
+                  image: MetasImage.asset('assets/allthat.jpg'))),
           Audio('assets/love.mp3',
-              metas: Metas(title: 'Love', artist: 'Benjamin Tissot')),
+              metas: Metas(
+                  title: 'Love',
+                  artist: 'Benjamin Tissot',
+                  image: MetasImage.asset('assets/love.jpg'))),
           Audio('assets/thejazzpiano.mp3',
-              metas: Metas(title: 'The Jazz Piano', artist: 'Benjamin Tissot')),
+              metas: Metas(
+                  title: 'The Jazz Piano',
+                  artist: 'Benjamin Tissot',
+                  image: MetasImage.asset('assets/thejazzpiano.jpg'))),
         ]),
         autoStart: false,
         loopMode: LoopMode.playlist);
