@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 
-class AudioPlayerSwiper extends StatefulWidget {
+class Episode5Swiper extends StatefulWidget {
   @override
-  _AudioPlayerSwiperState createState() => _AudioPlayerSwiperState();
+  _Episode5SwiperState createState() => _Episode5SwiperState();
 }
 
-class _AudioPlayerSwiperState extends State<AudioPlayerSwiper> {
+class _Episode5SwiperState extends State<Episode5Swiper> {
   final AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
   final SwiperController swiperController = SwiperController();
   double screenWidth = 0;

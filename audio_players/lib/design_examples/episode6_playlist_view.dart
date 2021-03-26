@@ -1,13 +1,13 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
-class AudioPlayerPlayListView extends StatefulWidget {
+class Episode6PlaylistView extends StatefulWidget {
   @override
-  _AudioPlayerPlayListViewState createState() =>
-      _AudioPlayerPlayListViewState();
+  _Episode6PlaylistViewState createState() =>
+      _Episode6PlaylistViewState();
 }
 
-class _AudioPlayerPlayListViewState extends State<AudioPlayerPlayListView> {
+class _Episode6PlaylistViewState extends State<Episode6PlaylistView> {
   final AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
   double screenHeight = 0;
   double screenWidth = 0;

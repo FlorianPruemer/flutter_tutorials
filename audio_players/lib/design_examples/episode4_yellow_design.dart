@@ -1,12 +1,12 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
-class AudioPlayerYellowDesign extends StatefulWidget {
+class Episode4YellowGradient extends StatefulWidget {
   @override
-  _AudioPlayerYellowDesignState createState() => _AudioPlayerYellowDesignState();
+  _Episode4YellowGradientState createState() => _Episode4YellowGradientState();
 }
 
-class _AudioPlayerYellowDesignState extends State<AudioPlayerYellowDesign> {
+class _Episode4YellowGradientState extends State<Episode4YellowGradient> {
   final AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
   double screenWidth = 0;
   double screenHeight = 0;

@@ -2,13 +2,13 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-class AudioPlayerLinearProgress extends StatefulWidget {
+class Episode2LinearProgress extends StatefulWidget {
   @override
-  _AudioPlayerLinearProgressState createState() =>
-      _AudioPlayerLinearProgressState();
+  _Episode2LinearProgressState createState() =>
+      _Episode2LinearProgressState();
 }
 
-class _AudioPlayerLinearProgressState extends State<AudioPlayerLinearProgress> {
+class _Episode2LinearProgressState extends State<Episode2LinearProgress> {
   final AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
 
   @override

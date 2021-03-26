@@ -2,14 +2,14 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class AudioPlayerCircularProgress extends StatefulWidget {
+class Episode1CircularProgress extends StatefulWidget {
   @override
-  _AudioPlayerCircularProgressState createState() =>
-      _AudioPlayerCircularProgressState();
+  _Episode1CircularProgressState createState() =>
+      _Episode1CircularProgressState();
 }
 
-class _AudioPlayerCircularProgressState
-    extends State<AudioPlayerCircularProgress> {
+class _Episode1CircularProgressState
+    extends State<Episode1CircularProgress> {
   final AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
 
   @override

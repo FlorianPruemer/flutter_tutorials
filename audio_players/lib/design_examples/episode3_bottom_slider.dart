@@ -2,13 +2,13 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AudioPlayerBottomSlider extends StatefulWidget {
+class Episode3BottomSlider extends StatefulWidget {
   @override
-  _AudioPlayerBottomSliderState createState() =>
-      _AudioPlayerBottomSliderState();
+  _Episode3BottomSliderState createState() =>
+      _Episode3BottomSliderState();
 }
 
-class _AudioPlayerBottomSliderState extends State<AudioPlayerBottomSlider> {
+class _Episode3BottomSliderState extends State<Episode3BottomSlider> {
   final AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
   double screenWidth = 0;
   double screenHeight = 0;
